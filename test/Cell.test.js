@@ -8,6 +8,6 @@ describe('Cell', () => {
     expect(cell.state).to.equal(CellState.ALIVE);
 
     const deadCell = new Cell(CellState.DEAD);
-    expect(cell.state).to.equal(CellState.DEAD);
+    expect(deadCell.state).to.equal(CellState.DEAD);
   });
 });
