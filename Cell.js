@@ -6,9 +6,10 @@ export default class Cell {
   }
 
   getNextState(numNeighbors){
-    if (numNeighbors < 2) {
-      return CellState.DEAD
+    
+   if (numNeighbors === 2 || numNeighbors === 3) {
+      return CellState.ALIVE
     }
-    return CellState.ALIVE
+    return CellState.DEAD
   }
 }
