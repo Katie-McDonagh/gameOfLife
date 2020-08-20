@@ -1,0 +1,5 @@
+{
+  "presets": ["@babel/preset-env"]
+}
+
+// babel config : it include all of ES next, 2015 features 
