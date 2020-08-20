@@ -16,4 +16,10 @@ describe("Cell", () => {
     const nextState = cell.getNextState(1)
     expect(nextState).to.equal(CellState.DEAD)
   });
+
+  it("should live with 2 or 3 live neighbors", () => {
+    const cell = new Cell(CellState.ALIVE)
+    const nextState = cell.getNextState(2)
+    expect(nextState).to.equal(CellState.ALIVE)
+  })
 })
