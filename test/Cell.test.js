@@ -21,5 +21,9 @@ describe("Cell", () => {
     const cell = new Cell(CellState.ALIVE)
     const nextState = cell.getNextState(2)
     expect(nextState).to.equal(CellState.ALIVE)
+
+    const threeNeighborCell = new Cell(CellState.ALIVE)
+    const threeNextState = threeNeighborCell.getNextState(3)
+    expect(threeNextState).to.equal(CellState.ALIVE)
   })
 })
