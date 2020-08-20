@@ -26,4 +26,10 @@ describe("Cell", () => {
     const threeNextState = threeNeighborCell.getNextState(3)
     expect(threeNextState).to.equal(CellState.ALIVE)
   })
+
+  it("should die with more than 3 neighbors", () => {
+    const cell = new Cell(CellState.ALIVE)
+    const fourNextState = cell.getNextState(4)
+    expect(fourNextState).to.equal(CellState.DEAD);
+  })
 })
