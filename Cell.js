@@ -1,3 +1,5 @@
+import CellState from "./CellState"
+
 export default class Cell {
   constructor(state){
     this.state = state
@@ -5,8 +7,8 @@ export default class Cell {
 
   getNextState(numNeighbors){
     if (numNeighbors < 2) {
-      return 0
+      return CellState.DEAD
     }
-    return 1
+    return CellState.ALIVE
   }
 }
