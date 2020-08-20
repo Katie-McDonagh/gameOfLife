@@ -1,12 +1,13 @@
-import { expect } from 'chai'; 
+import { expect } from 'chai';
 import CellState from '../CellState'
 
-describe('CellState', () => {
-  it('should have a ALIVE state', () => {
-    expect(CellState.ALIVE).to.equal(1);
-  })
+describe("CellState", () => {
 
-  it('should have a DEAD state', () => {
+  it("allows a CellState to be ALIVE",()  => {
+    expect(CellState.ALIVE).to.equal(1);
+  });
+  it("allows a CellState to be DEAD",()  => {
     expect(CellState.DEAD).to.equal(0);
-  })
-})
+  });
+
+});
