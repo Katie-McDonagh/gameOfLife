@@ -40,12 +40,11 @@ describe("Cell", () => {
 
   it("should die with more than 3 neighbors", () => {
     const cell = new Cell(CellState.ALIVE)
-    const fourNextState = cell.getNextState(4)
-    expect(fourNextState).to.equal(CellState.DEAD);
+    const nextStateWith4Neighbors = cell.getNextState(4)
+    expect(nextStateWith4Neighbors).to.equal(CellState.DEAD);
 
-    const ninetyCell = new Cell(CellState.ALIVE)
-    const ninetyNextState = ninetyCell.getNextState(90)
-    expect(ninetyNextState).to.equal(CellState.DEAD);
+    const nextStateWith90Neighbors = cell.getNextState(90)
+    expect(nextStateWith90Neighbors).to.equal(CellState.DEAD);
   })
 
   it("should come alive with exactly 3 neighbors", () => {
