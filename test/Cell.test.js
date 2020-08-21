@@ -49,7 +49,7 @@ describe("Cell", () => {
 
   it("should come alive with exactly 3 neighbors", () => {
     const cell = new Cell(CellState.DEAD)
-    const threeNextState = cell.getNextState(3)
-      expect(threeNextState).to.equal(CellState.ALIVE)
+    const nextStateWith3Neighbors = cell.getNextState(3)
+      expect(nextStateWith3Neighbors).to.equal(CellState.ALIVE)
   })
 })
