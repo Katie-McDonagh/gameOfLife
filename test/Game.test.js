@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import { DEAD } from '../CellState';
+import { DEAD, ALIVE } from '../CellState';
 import Game from '../Game';
 import Cell from '../Cell';
 
@@ -29,5 +29,15 @@ describe('Game of Life', () => {
     const cell = game.getCell(0, 0);
     expect(cell).to.be.instanceof(Cell)
     expect(cell.state).to.equal(deadState[0][0]);
+
+    const gameState = [
+      [ALIVE, DEAD],
+      [DEAD, ALIVE],
+    ]
+    const newGame = new Game(gameState);
+    const aliveCell = game.getCell(0, 0);
+    expect(aliveCell).to.be.instanceof(Cell)
+    expect(aliveCell.state).to.equal(gameState[0][0]);
+
   })
 });
