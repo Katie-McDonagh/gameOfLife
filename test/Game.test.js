@@ -26,7 +26,7 @@ describe('Game of Life', () => {
     expect(game.state).to.deep.equal(cellState);
   });
 
-  it('should retrieve a cell at a given row and colum', () => {
+ xit('should retrieve a cell at a given row and colum', () => {
     const game = new Game(deadState);
     const cell = game.getCell(0, 0);
     expect(cell).to.be.instanceof(Cell)
@@ -92,7 +92,7 @@ describe('Game of Life', () => {
     expect(numAliveNeighbors).to.equal(2);
   });
 
-  it("should get the number of alive neighbors for cell in the top row", () => {
+  xit("should get the number of alive neighbors for cell in the top row", () => {
     const gameState = [
       [ALIVE, ALIVE, ALIVE],
       [DEAD, DEAD, DEAD],
@@ -114,5 +114,17 @@ describe('Game of Life', () => {
     const game = new Game(gameState)
     const numAliveNeighbors = game.getNumOfAliveNeighbors(0, 0);
     expect(numAliveNeighbors).to.equal(1);
+  });
+
+  it("should get the number of alive neighbors for cell in the first colum", () => {
+    const gameState = [
+      [DEAD, DEAD, DEAD],
+      [ALIVE, DEAD, DEAD],
+      [DEAD, DEAD, DEAD],
+
+    ];
+    const game = new Game(gameState)
+    const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 0);
+    expect(numAliveNeighbors).to.equal(0);
   });
 });
