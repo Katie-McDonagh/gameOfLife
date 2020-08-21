@@ -43,7 +43,7 @@ describe('Game of Life', () => {
 
     const deadCell = game.getCell(1, 1);
     expect(deadCell).to.be.an.instanceof(Cell)
-    expect(deadCell.state).to.equal(gameState[1][1]);
+    expect(deadCell.state).to.equal(gameState[0][1]);
 
   })
 
@@ -78,5 +78,17 @@ describe('Game of Life', () => {
     const game = new Game(gameState);
     const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
     expect(numAliveNeighbors).to.equal(3);
+  });
+
+  it("should get the number of alive neighbors next to  a given cell", () => {
+    const gameState = [
+      [DEAD, DEAD, DEAD],
+      [ALIVE, ALIVE, ALIVE],
+      [DEAD, DEAD, DEAD],
+
+    ];
+    const game = new Game(gameState);
+    const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
+    expect(numAliveNeighbors).to.equal(2);
   });
 });
