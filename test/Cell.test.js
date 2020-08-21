@@ -21,13 +21,12 @@ describe("Cell", () => {
   });
 
   it("should stay dead if it has fewer than 2 neighbors", () => {
-    const zeroCell = new Cell(CellState.DEAD)
-    const zeroNextState = zeroCell.getNextState(0)
-    expect(zeroNextState).to.equal(CellState.DEAD)
+    const cell = new Cell(CellState.DEAD)
+    const nextStateWith0Neighbors = cell.getNextState(0)
+    expect(nextStateWith0Neighbors).to.equal(CellState.DEAD)
     
-    const oneCell = new Cell(CellState.DEAD)
-    const oneNextState = oneCell.getNextState(1)
-    expect(oneNextState).to.equal(CellState.DEAD)
+    const nextStateWith1Neighbor = cell.getNextState(1)
+    expect(nextStateWith1Neighbor).to.equal(CellState.DEAD)
   })
 
   it("should live with 2 or 3 live neighbors", () => {
