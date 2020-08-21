@@ -147,7 +147,7 @@ describe('Game of Life', () => {
 
     ];
     const game = new Game(gameState)
-    const numAliveNeighbors = game.getNumOfAliveNeighbors(2, 2);
+    const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 2);
     expect(numAliveNeighbors).to.equal(0);
   });
 

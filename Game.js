@@ -19,18 +19,18 @@ export default class Game {
 
     const topLeft = (row === 0 || col === 0) ? edgeCell : rowAbove[col -1];
     const top = row === 0 ? edgeCell : rowAbove[col];
-    const topRight = row === 0 ? edgeCell : rowAbove[col + 1];
+    const topRight = (row === 0 || col === this.numCols -1) ? edgeCell : rowAbove[col + 1];
 
     const rowBelow = this.state[row + 1];
 
     const bottomLeft = (row === 0 || col === 0 || row === this.numRows - 1) ? edgeCell : rowBelow[col - 1];
     const bottom = row === this.numRows - 1 ? edgeCell : rowBelow[col];
-    const bottomRight = row === this.numRows - 1 ? edgeCell : rowBelow[col + 1];
+    const bottomRight = (row === this.numRows - 1 || col === this.numCols - 1) ? edgeCell : rowBelow[col + 1];
 
     const thisRow = this.state[row];
 
     const left = col === 0 ? edgeCell : thisRow[row - 1];
-    const right = thisRow[row + 1];
+    const right = col === this.numCols - 1 ? edgeCell : thisRow[row + 1];
 
     const stateValues = {
       [CellState.ALIVE]: 1,
