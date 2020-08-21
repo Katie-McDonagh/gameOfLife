@@ -36,11 +36,11 @@ describe('Game of Life', () => {
     ]
     const newGame = new Game(gameState);
     const aliveCell = game.getCell(0, 0);
-    expect(aliveCell).to.be.instanceof(Cell)
+    expect(aliveCell).to.be.an.instanceof(Cell)
     expect(aliveCell.state).to.equal(gameState[0][0]);
 
-    const deadCell = game.getCell(0, 0);
-    expect(deadCell).to.be.instanceof(Cell)
+    const deadCell = game.getCell(1, 1);
+    expect(deadCell).to.be.an.instanceof(Cell)
     expect(deadCell.state).to.equal(gameState[1][1]);
 
   })
