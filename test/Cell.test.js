@@ -31,12 +31,11 @@ describe("Cell", () => {
 
   it("should live with 2 or 3 live neighbors", () => {
     const cell = new Cell(CellState.ALIVE)
-    const nextState = cell.getNextState(2)
-    expect(nextState).to.equal(CellState.ALIVE)
+    const nextStateWith2Neighbors = cell.getNextState(2)
+    expect(nextStateWith2Neighbors).to.equal(CellState.ALIVE)
 
-    const threeNeighborCell = new Cell(CellState.ALIVE)
-    const threeNextState = threeNeighborCell.getNextState(3)
-    expect(threeNextState).to.equal(CellState.ALIVE)
+    const nextStateWith3Neighbors = cell.getNextState(3)
+    expect(nextStateWith3Neighbors).to.equal(CellState.ALIVE)
   })
 
   it("should die with more than 3 neighbors", () => {
