@@ -17,9 +17,19 @@ describe("Cell", () => {
     expect(zeroNextState).to.equal(CellState.DEAD)
     
     const oneCell = new Cell(CellState.ALIVE)
-    const nextState = oneCell.getNextState(1)
-    expect(nextState).to.equal(CellState.DEAD)
+    const oneNextState = oneCell.getNextState(1)
+    expect(oneNextState).to.equal(CellState.DEAD)
   });
+
+  it("should stay dead if it has fewer than 2 neighbors", () => {
+    const zeroCell = new Cell(CellState.DEAD)
+    const zeroNextState = zeroCell.getNextState(0)
+    expect(zeroNextState).to.equal(CellState.DEAD)
+    
+    const oneCell = new Cell(CellState.DEAD)
+    const oneNextState = oneCell.getNextState(1)
+    expect(oneNextState).to.equal(CellState.DEAD)
+  })
 
   it("should live with 2 or 3 live neighbors", () => {
     const cell = new Cell(CellState.ALIVE)
