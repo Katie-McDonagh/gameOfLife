@@ -1,5 +1,9 @@
 import { expect } from 'chai';
 
+import { DEAD } from '../CellState';
+import Game from '../Game';
+import Cell from '../Cell';
+
 describe('Game of Life', () => {
   it('should be initialized with a given state', () => {
     const state = [
@@ -9,11 +13,11 @@ describe('Game of Life', () => {
     ];
     const game = new Game(state);
     const cellState = [
-      [new cell(DEAD), new cell(DEAD), new cell(DEAD)], 
-      [new cell(DEAD), new cell(DEAD), new cell(DEAD)],
-      [new cell(DEAD), new cell(DEAD), new cell(DEAD)]
+      [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)], 
+      [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)],
+      [new Cell(DEAD), new Cell(DEAD), new Cell(DEAD)]
     ];
 
-    expect(game.state).to.deep.equal(state);
+    expect(game.state).to.deep.equal(cellState);
   });
 });
