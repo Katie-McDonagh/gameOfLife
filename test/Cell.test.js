@@ -11,6 +11,12 @@ describe("Cell", () => {
     expect(deadCell.state).to.equal(CellState.DEAD)
   });
 
+  it("should throw an error if not initialized with a CellState", () => {
+    expect(() => {
+      const cell = new Cell(undefined);
+    }).to.throw();
+  });
+
   it("should die if it has fewer than 2 live neighbors", () => {
     const cell = new Cell(CellState.ALIVE)
     const nextStateWith0Neighbors = cell.getNextState(0)

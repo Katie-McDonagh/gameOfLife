@@ -4,6 +4,8 @@ import { DEAD, ALIVE } from '../CellState';
 import Game from '../Game';
 import Cell from '../Cell';
 
+// const { DEAD, ALIVE } = CellState;
+
 const deadState = [
   [DEAD, DEAD, DEAD], 
   [DEAD, DEAD, DEAD],
