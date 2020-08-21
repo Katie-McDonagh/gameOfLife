@@ -44,4 +44,15 @@ describe('Game of Life', () => {
     expect(deadCell.state).to.equal(gameState[1][1]);
 
   })
+
+  it("should get the number of alive neighbors of a given cell", () => {
+    const gameState = [
+      [ALIVE, ALIVE, ALIVE],
+      [ALIVE, ALIVE, ALIVE],
+      [ALIVE, ALIVE, ALIVE]
+    ];
+    const game = new Game(gameState);
+    const numOfAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
+    expect(numOfAliveNeighbors).to.equal(8);
+  });
 });
