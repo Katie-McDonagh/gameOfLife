@@ -35,5 +35,9 @@ describe("Cell", () => {
     const cell = new Cell(CellState.ALIVE)
     const fourNextState = cell.getNextState(4)
     expect(fourNextState).to.equal(CellState.DEAD);
+
+    const ninetyCell = new Cell(CellState.ALIVE)
+    const ninetyNextState = ninetyCell.getNextState(90)
+    expect(ninetyNextState).to.equal(CellState.DEAD);
   })
 })
