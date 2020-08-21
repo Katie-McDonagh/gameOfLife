@@ -40,4 +40,10 @@ describe("Cell", () => {
     const ninetyNextState = ninetyCell.getNextState(90)
     expect(ninetyNextState).to.equal(CellState.DEAD);
   })
+
+  it("should come alive with exactly 3 neighbors", () => {
+    const cell = new Cell(CellState.DEAD)
+    const threeNextState = cell.getNextState(3)
+      expect(threeNextState).to.equal(CellState.ALIVE)
+  })
 })
