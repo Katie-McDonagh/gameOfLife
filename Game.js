@@ -40,7 +40,9 @@ export default class Game {
 
    this.state.forEach((cellRow, rowNum) => {
      cellRow.forEach((cell, colNum) => {
-       if(cellAbove(rowNum, colNum) || cellNext(rowNum, colNum) || cellBelow(rowNum, colNum)){
+       if(cellAbove(rowNum, colNum) 
+        || cellNext(rowNum, colNum) 
+        || cellBelow(rowNum, colNum)){
          numNeighbors += stateValues[cell.state];
        } 
      });
