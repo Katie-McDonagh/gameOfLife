@@ -13,7 +13,6 @@ export default class Game {
   }
 
   getNumOfAliveNeighbors(row, col) {
-    const edgeCell = new Cell(CellState.DEAD);
 
     const stateValues = {
       [CellState.ALIVE]: 1,
@@ -27,22 +26,21 @@ export default class Game {
        //top neighbors
        if((colNum === col -1 && rowNum === row - 1)
         ||(colNum === col && rowNum === row - 1)
-        ||(colNum === col + 1 && rowNum === row - 1)){
-          numNeighbors += stateValues[cell.state];
-       } else if ((colNum === col -1 && rowNum == row)
-        ||(colNum === col + 1 && rowNum === row)){
-          numNeighbors += stateValues[cell.state];
-          //bottom neighbors
-        } else if ((colNum === col -1 && rowNum === row + 1)
+        ||(colNum === col + 1 && rowNum === row - 1)
+        ||(colNum === col -1 && rowNum == row)
+        ||(colNum === col + 1 && rowNum === row)
+        ||(colNum === col -1 && rowNum === row + 1)
         ||(colNum === col && rowNum === row + 1)
         ||(colNum === col + 1 && rowNum === row + 1)){
           numNeighbors += stateValues[cell.state];
-        }
-
+       } 
      });
    });
 
    return numNeighbors
+
+
+  //  const edgeCell = new Cell(CellState.DEAD);
 
     // const rowAbove = this.state[row - 1];
 
