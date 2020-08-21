@@ -83,5 +83,7 @@ export default class Game {
     //   .reduce((sum, { state }) => sum + stateValues[state], 0);
   }
 
-
+  getNextState() {
+    return this.state.map((row, rowNum) => row.map((cell, colNum) => new Cell(cell.getNextState(this.getNumOfAliveNeighbors(rowNum, colNum)))));
+  }
 }
