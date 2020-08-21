@@ -6,12 +6,13 @@ export default class Game {
   }
 
   getCell(row, col){
-    return this.state[row][col]
+    return this.state[row][col];
   }
 
-  getNumOfAliveNeighbors(row, col){
+  getNumOfAliveNeighbors(row, col) {
     const rowAbove = this.state[row - 1];
-    const topLeft = this.state[col -1];
+
+    const topLeft = rowAbove[col -1];
     const top = rowAbove[col];
     const topRight = rowAbove[col + 1];
 

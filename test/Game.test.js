@@ -1,10 +1,10 @@
 import { expect } from 'chai';
 
-import { DEAD, ALIVE } from '../CellState';
+import CellState from '../CellState';
 import Game from '../Game';
 import Cell from '../Cell';
 
-// const { DEAD, ALIVE } = CellState;
+const { DEAD, ALIVE } = CellState;
 
 const deadState = [
   [DEAD, DEAD, DEAD], 
@@ -54,8 +54,8 @@ describe('Game of Life', () => {
       [ALIVE, ALIVE, ALIVE]
     ];
     const game = new Game(gameState);
-    const numOfAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
-    expect(numOfAliveNeighbors).to.equal(8);
+    const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
+    expect(numAliveNeighbors).to.equal(8);
   });
 
   it("should get the number of alive neighbors above a given cell", () => {
@@ -65,7 +65,18 @@ describe('Game of Life', () => {
       [DEAD, DEAD, DEAD]
     ];
     const game = new Game(gameState);
-    const numOfAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
-    expect(numOfAliveNeighbors).to.equal(3);
+    const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
+    expect(numAliveNeighbors).to.equal(3);
+  });
+
+  it("should get the number of alive neighbors below a given cell", () => {
+    const gameState = [
+      [DEAD, DEAD, DEAD],
+      [DEAD, ALIVE, DEAD],
+      [ALIVE, ALIVE, ALIVE]
+    ];
+    const game = new Game(gameState);
+    const numAliveNeighbors = game.getNumOfAliveNeighbors(1, 1)
+    expect(numAliveNeighbors).to.equal(3);
   });
 });
