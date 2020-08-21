@@ -2,6 +2,9 @@ import CellState from "./CellState"
 
 export default class Cell {
   constructor(state){
+    if(!(state in CellState)){
+      throw new Error('Invalid State');
+      }
     this.state = state
   }
 
