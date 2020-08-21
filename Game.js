@@ -6,6 +6,6 @@ export default class Game {
   }
 
   getCell(row, col){
-    return new Cell()
+    return this.state[row][col]
   }
 }
